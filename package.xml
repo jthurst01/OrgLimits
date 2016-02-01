@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>RESTLimitResource</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>OrgLimits</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>justgage</members>
+        <members>raphael</members>
+        <name>StaticResource</name>
+    </types>
+    <version>35.0</version>
+</Package>
