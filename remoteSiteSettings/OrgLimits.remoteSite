@@ -3,5 +3,5 @@
     <description>Setting to allow the OrgLimits Apex Class call the Salesforce REST API</description>
     <disableProtocolSecurity>false</disableProtocolSecurity>
     <isActive>true</isActive>
-    <url>https://instance.salesforce.com</url>
+    <url>https://c.instance.visual.force.com</url>
 </RemoteSiteSetting>
