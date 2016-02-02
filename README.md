@@ -10,8 +10,10 @@ The Visualforce page uses an open source JavaScript library called [JustGage](ht
 4. Create a Remote Site Setting to allow the Apex Class to call teh Salesforce REST API
     1. Navigate to Setup > Security Controls > Remote Site Settings
     2. Find the Remote Site Setting names "OrgLimits" and click Edit
-    3. Change the Remote Site URL field from `https://instance.salesforce.com` to your instance
-        * You can find this in the browser address bar when you are logged in
+    3. Change the Remote Site URL field from `https://c.instance.visual.force.com` to your Visualforce instance
+        * You can find this in the browser address bar when you are Displayiong a Visualforce Page.  
+        * Alternatively, if you proceed to Step 5 you will see an error with the appropriate instance if you have not completed this step.  Simply copy the domain from the error and add that to the Remote Site Setting.  The error will say something like:
+            *  `Unauthorized endpoint, please check Setup->Security->Remote site settings. endpoint = https://c.na3.visual.force.com/services/data/v35.0/limits`
 5. Add the Custom Tab "OrgLimits" to your Tab Layout, or go to `/apex/OrgLimits` to view your daily limits
 
 ## Open Issues to Remember
