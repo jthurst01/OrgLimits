@@ -9,6 +9,18 @@
         <name>ApexPage</name>
     </types>
     <types>
+        <members>OrgLimits</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>OrgLimits</members>
+        <name>PermissionSet</name>
+    </types>
+    <types>
+        <members>OrgLimits</members>
+        <name>RemoteSiteSetting</name>
+    </types>
+    <types>
         <members>justgage</members>
         <members>raphael</members>
         <name>StaticResource</name>

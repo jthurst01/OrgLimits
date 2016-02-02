@@ -141,7 +141,8 @@
                 value: obj.ConcurrentSyncReportRuns.Max - obj.ConcurrentSyncReportRuns.Remaining,
                 max: obj.ConcurrentSyncReportRuns.Max,
                 title: 'Concurrent Sync Reports',
-                defaults: dflt
+                defaults: dflt,
+                label: 'test'
             });
             var gg15 = new JustGage({
                 id: 'gg15',
