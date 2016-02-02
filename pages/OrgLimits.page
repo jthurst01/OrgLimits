@@ -6,9 +6,9 @@
             text-align: center;
         }
         .gauge {
-            width: 250px;
-            border: 1px solid black;
-            display: inline-block;
+            width: 300px;
+            border: 1px solid black;            
+            display: none;
         }
     </style>
 
@@ -32,6 +32,9 @@
         <div id="gg17" class="gauge"></div>
         <div id="gg18" class="gauge"></div>
         <div id="gg19" class="gauge"></div>
+        <div id="gg20" class="gauge"></div>
+        <div id="gg21" class="gauge"></div>
+        <div id="gg22" class="gauge"></div>
         <div style="display: none;"><input type="text" id="inJSON" value="{!JSONtext}"/></div> 
     </div>
     <script src="{!$Resource.raphael}"></script>
@@ -46,140 +49,227 @@
                 counter: true,
                 hideInnerShadow: true
             }
-            var gg1 = new JustGage({
-                id: 'gg1',
-                value: obj.DailyApiRequests.Max - obj.DailyApiRequests.Remaining,
-                max: obj.DailyApiRequests.Max,
-                title: 'Daily API Requests',
-                defaults: dflt
-            });
-            var gg2 = new JustGage({
-                id: 'gg2',
-                value: obj.DailyBulkApiRequests.Max - obj.DailyBulkApiRequests.Remaining,
-                max: obj.DailyBulkApiRequests.Max,
-                title: 'Daily Bulk API Requests',
-                defaults: dflt
-            });
-            var gg3 = new JustGage({
-                id: 'gg3',
-                value: obj.DailyStreamingApiEvents.Max - obj.DailyStreamingApiEvents.Remaining,
-                max: obj.DailyStreamingApiEvents.Max,
-                title: 'Daily PushTopic Streaming Events',
-                defaults: dflt
-            });
-            var gg4 = new JustGage({
-                id: 'gg4',
-                value: obj.DailyGenericStreamingApiEvents.Max - obj.DailyGenericStreamingApiEvents.Remaining,
-                max: obj.DailyGenericStreamingApiEvents.Max,
-                title: 'Daily Generic Streaming Events',
-                defaults: dflt
-            });
-            var gg5 = new JustGage({
-                id: 'gg5',
-                value: obj.StreamingApiConcurrentClients.Max - obj.StreamingApiConcurrentClients.Remaining,
-                max: obj.StreamingApiConcurrentClients.Max,
-                title: 'Concurrent Streaming Clients',
-                defaults: dflt
-            });
-            var gg6 = new JustGage({
-                id: 'gg6',
-                value: obj.DataStorageMB.Max - obj.DataStorageMB.Remaining,
-                max: obj.DataStorageMB.Max,
-                title: 'Data Storage (MB)',
-                defaults: dflt
-            });
-            var gg7 = new JustGage({
-                id: 'gg7',
-                value: obj.FileStorageMB.Max - obj.FileStorageMB.Remaining,
-                max: obj.FileStorageMB.Max,
-                title: 'File Storage (MB)',
-                defaults: dflt
-            });
-            var gg8 = new JustGage({
-                id: 'gg8',
-                value: obj.DailyAsyncApexExecutions.Max - obj.DailyAsyncApexExecutions.Remaining,
-                max: obj.DailyAsyncApexExecutions.Max,
-                title: 'Daily Async Apex Execs',
-                defaults: dflt
-            });
-            var gg9 = new JustGage({
-                id: 'gg9',
-                value: obj.MassEmail.Max - obj.MassEmail.Remaining,
-                max: obj.MassEmail.Max,
-                title: 'Daily Mass Emails',
-                defaults: dflt
-            });
-            var gg10 = new JustGage({
-                id: 'gg10',
-                value: obj.SingleEmail.Max - obj.SingleEmail.Remaining,
-                max: obj.SingleEmail.Max,
-                title: 'Daily Single Emails',
-                defaults: dflt
-            });
-            var gg11 = new JustGage({
-                id: 'gg11',
-                value: obj.DailyWorkflowEmails.Max - obj.DailyWorkflowEmails.Remaining,
-                max: obj.DailyWorkflowEmails.Max,
-                title: 'Daily Workflow Emails',
-                defaults: dflt
-            });
-            var gg12 = new JustGage({
-                id: 'gg12',
-                value: obj.HourlyTimeBasedWorkflow.Max - obj.HourlyTimeBasedWorkflow.Remaining,
-                max: obj.HourlyTimeBasedWorkflow.Max,
-                title: 'Hourly Time Based Workflow',
-                defaults: dflt
-            });
-            var gg13 = new JustGage({
-                id: 'gg13',
-                value: obj.HourlySyncReportRuns.Max - obj.HourlySyncReportRuns.Remaining,
-                max: obj.HourlySyncReportRuns.Max,
-                title: 'Hourly Sync Reports',
-                defaults: dflt
-            });
-            var gg14 = new JustGage({
-                id: 'gg14',
-                value: obj.ConcurrentSyncReportRuns.Max - obj.ConcurrentSyncReportRuns.Remaining,
-                max: obj.ConcurrentSyncReportRuns.Max,
-                title: 'Concurrent Sync Reports',
-                defaults: dflt,
-                label: 'test'
-            });
-            var gg15 = new JustGage({
-                id: 'gg15',
-                value: obj.HourlyAsyncReportRuns.Max - obj.HourlyAsyncReportRuns.Remaining,
-                max: obj.HourlyAsyncReportRuns.Max,
-                title: 'Hourly Async Reports',
-                defaults: dflt
-            });
-            var gg16 = new JustGage({
-                id: 'gg16',
-                value: obj.ConcurrentAsyncGetReportInstances.Max - obj.ConcurrentAsyncGetReportInstances.Remaining,
-                max: obj.ConcurrentAsyncGetReportInstances.Max,
-                title: 'Concurrent Async Reports',
-                defaults: dflt
-            });
-            var gg17 = new JustGage({
-                id: 'gg17',
-                value: obj.HourlyDashboardRefreshes.Max - obj.HourlyDashboardRefreshes.Remaining,
-                max: obj.HourlyDashboardRefreshes.Max,
-                title: 'Hourly Dashboard Refreshes',
-                defaults: dflt
-            });
-            var gg18 = new JustGage({
-                id: 'gg18',
-                value: obj.HourlyDashboardResults.Max - obj.HourlyDashboardResults.Remaining,
-                max: obj.HourlyDashboardResults.Max,
-                title: 'Hourly Dashboard Results',
-                defaults: dflt
-            });
-            var gg19 = new JustGage({
-                id: 'gg19',
-                value: obj.HourlyDashboardStatuses.Max - obj.HourlyDashboardStatuses.Remaining,
-                max: obj.HourlyDashboardStatuses.Max,
-                title: 'Hourly Dashboard Statuses',
-                defaults: dflt
-            });
+            if(obj.hasOwnProperty('DailyApiRequests')) {
+                document.getElementById("gg1").style.display="inline-block";
+                var gg1 = new JustGage({
+                    id: 'gg1',
+                    value: obj.DailyApiRequests.Max - obj.DailyApiRequests.Remaining,
+                    max: obj.DailyApiRequests.Max,
+                    title: 'Daily API Requests',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('DailyBulkApiRequests')) {
+                document.getElementById("gg2").style.display="inline-block";
+                var gg2 = new JustGage({
+                    id: 'gg2',
+                    value: obj.DailyBulkApiRequests.Max - obj.DailyBulkApiRequests.Remaining,
+                    max: obj.DailyBulkApiRequests.Max,
+                    title: 'Daily Bulk API Requests',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('DailyStreamingApiEvents')) {
+                document.getElementById("gg3").style.display="inline-block";
+                var gg3 = new JustGage({
+                    id: 'gg3',
+                    value: obj.DailyStreamingApiEvents.Max - obj.DailyStreamingApiEvents.Remaining,
+                    max: obj.DailyStreamingApiEvents.Max,
+                    title: 'Daily PushTopic Streaming Events',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('DailyStreamingV2ApiEvents')) {
+                document.getElementById("gg4").style.display="inline-block";
+                var gg4 = new JustGage({
+                    id: 'gg4',
+                    value: obj.DailyStreamingV2ApiEvents.Max - obj.DailyStreamingV2ApiEvents.Remaining,
+                    max: obj.DailyStreamingV2ApiEvents.Max,
+                    title: 'Daily Durable PushTopic Streaming Events',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('DailyGenericStreamingApiEvents')) {
+                document.getElementById("gg5").style.display="inline-block";
+                var gg5 = new JustGage({
+                    id: 'gg5',
+                    value: obj.DailyGenericStreamingApiEvents.Max - obj.DailyGenericStreamingApiEvents.Remaining,
+                    max: obj.DailyGenericStreamingApiEvents.Max,
+                    title: 'Daily Generic Streaming Events',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('DailyGenericStreamingV2ApiEvents')) {
+                document.getElementById("gg6").style.display="inline-block";
+                var gg6 = new JustGage({
+                    id: 'gg6',
+                    value: obj.DailyGenericStreamingV2ApiEvents.Max - obj.DailyGenericStreamingV2ApiEvents.Remaining,
+                    max: obj.DailyGenericStreamingV2ApiEvents.Max,
+                    title: 'Daily Durable Generic Streaming Events',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('StreamingApiConcurrentClients')) {
+                document.getElementById("gg7").style.display="inline-block";
+                var gg7 = new JustGage({
+                    id: 'gg7',
+                    value: obj.StreamingApiConcurrentClients.Max - obj.StreamingApiConcurrentClients.Remaining,
+                    max: obj.StreamingApiConcurrentClients.Max,
+                    title: 'Concurrent Streaming Clients',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('StreamingV2ApiConcurrentClients')) {
+                document.getElementById("gg8").style.display="inline-block";
+                var gg8 = new JustGage({
+                    id: 'gg8',
+                    value: obj.StreamingV2ApiConcurrentClients.Max - obj.StreamingV2ApiConcurrentClients.Remaining,
+                    max: obj.StreamingV2ApiConcurrentClients.Max,
+                    title: 'Concurrent Durable Streaming Clients',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('DataStorageMB')) {
+                document.getElementById("gg9").style.display="inline-block";
+                var gg9 = new JustGage({
+                    id: 'gg9',
+                    value: obj.DataStorageMB.Max - obj.DataStorageMB.Remaining,
+                    max: obj.DataStorageMB.Max,
+                    title: 'Data Storage (MB)',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('FileStorageMB')) {
+                document.getElementById("gg10").style.display="inline-block";
+                var gg10 = new JustGage({
+                    id: 'gg10',
+                    value: obj.FileStorageMB.Max - obj.FileStorageMB.Remaining,
+                    max: obj.FileStorageMB.Max,
+                    title: 'File Storage (MB)',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('DailyAsyncApexExecutions')) {
+                document.getElementById("gg11").style.display="inline-block";
+                var gg11 = new JustGage({
+                    id: 'gg11',
+                    value: obj.DailyAsyncApexExecutions.Max - obj.DailyAsyncApexExecutions.Remaining,
+                    max: obj.DailyAsyncApexExecutions.Max,
+                    title: 'Daily Async Apex Execs',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('MassEmail')) {
+                document.getElementById("gg12").style.display="inline-block";
+                var gg12 = new JustGage({
+                    id: 'gg12',
+                    value: obj.MassEmail.Max - obj.MassEmail.Remaining,
+                    max: obj.MassEmail.Max,
+                    title: 'Daily Mass Emails',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('SingleEmail')) {
+                document.getElementById("gg13").style.display="inline-block";
+                var gg13 = new JustGage({
+                    id: 'gg13',
+                    value: obj.SingleEmail.Max - obj.SingleEmail.Remaining,
+                    max: obj.SingleEmail.Max,
+                    title: 'Daily Single Emails',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('DailyWorkflowEmails')) {
+                document.getElementById("gg14").style.display="inline-block";
+                var gg14 = new JustGage({
+                    id: 'gg14',
+                    value: obj.DailyWorkflowEmails.Max - obj.DailyWorkflowEmails.Remaining,
+                    max: obj.DailyWorkflowEmails.Max,
+                    title: 'Daily Workflow Emails',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('HourlyTimeBasedWorkflow')) {
+                document.getElementById("gg15").style.display="inline-block";
+                var gg15 = new JustGage({
+                    id: 'gg15',
+                    value: obj.HourlyTimeBasedWorkflow.Max - obj.HourlyTimeBasedWorkflow.Remaining,
+                    max: obj.HourlyTimeBasedWorkflow.Max,
+                    title: 'Hourly Time Based Workflow',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('HourlySyncReportRuns')) {
+                document.getElementById("gg16").style.display="inline-block";
+                var gg16 = new JustGage({
+                    id: 'gg16',
+                    value: obj.HourlySyncReportRuns.Max - obj.HourlySyncReportRuns.Remaining,
+                    max: obj.HourlySyncReportRuns.Max,
+                    title: 'Hourly Sync Reports',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('ConcurrentSyncReportRuns')) {
+                document.getElementById("gg17").style.display="inline-block";
+                var gg17 = new JustGage({
+                    id: 'gg17',
+                    value: obj.ConcurrentSyncReportRuns.Max - obj.ConcurrentSyncReportRuns.Remaining,
+                    max: obj.ConcurrentSyncReportRuns.Max,
+                    title: 'Concurrent Sync Reports',
+                    defaults: dflt,
+                    label: 'test'
+                });
+            }
+            if(obj.hasOwnProperty('HourlyAsyncReportRuns')) {
+                document.getElementById("gg18").style.display="inline-block";
+                var gg18 = new JustGage({
+                    id: 'gg18',
+                    value: obj.HourlyAsyncReportRuns.Max - obj.HourlyAsyncReportRuns.Remaining,
+                    max: obj.HourlyAsyncReportRuns.Max,
+                    title: 'Hourly Async Reports',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('ConcurrentAsyncGetReportInstances')) {
+                document.getElementById("gg19").style.display="inline-block";
+                var gg19 = new JustGage({
+                    id: 'gg19',
+                    value: obj.ConcurrentAsyncGetReportInstances.Max - obj.ConcurrentAsyncGetReportInstances.Remaining,
+                    max: obj.ConcurrentAsyncGetReportInstances.Max,
+                    title: 'Concurrent Async Reports',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('HourlyDashboardRefreshes')) {
+                document.getElementById("gg20").style.display="inline-block";
+                var gg20 = new JustGage({
+                    id: 'gg20',
+                    value: obj.HourlyDashboardRefreshes.Max - obj.HourlyDashboardRefreshes.Remaining,
+                    max: obj.HourlyDashboardRefreshes.Max,
+                    title: 'Hourly Dashboard Refreshes',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('HourlyDashboardResults')) {
+                document.getElementById("gg21").style.display="inline-block";
+                var gg21 = new JustGage({
+                    id: 'gg21',
+                    value: obj.HourlyDashboardResults.Max - obj.HourlyDashboardResults.Remaining,
+                    max: obj.HourlyDashboardResults.Max,
+                    title: 'Hourly Dashboard Results',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('HourlyDashboardStatuses')) {
+                document.getElementById("gg22").style.display="inline-block";
+                var gg22 = new JustGage({
+                    id: 'gg22',
+                    value: obj.HourlyDashboardStatuses.Max - obj.HourlyDashboardStatuses.Remaining,
+                    max: obj.HourlyDashboardStatuses.Max,
+                    title: 'Hourly Dashboard Statuses',
+                    defaults: dflt
+                });
+            }
         });
   </script>
 
