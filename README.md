@@ -1,6 +1,3 @@
-# OrgLimits
-Simple VF page and Apex Class to display the Org Limits
-
 # Salesforce REST API /limits Resource Viewer
 This repository contains all the code you need to set up a Visualforce page in your Salesforce Org that can be used to display the current limit usage for your org.  The page gathers the information from the Salesforce REST API resource `/services/data/v35.0/limits' which is full documented [in the REST API Documentation](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_limits.htm).
 
