@@ -14,7 +14,7 @@ The Visualforce page uses an open source JavaScript library called [JustGage](ht
     1. Navigate to Setup > Security Controls > Remote Site Settings
     2. Find the Remote Site Setting names "OrgLimits" and click Edit
     3. Change the Remote Site URL field from `https://instance.salesforce.com` to your instance
-    4. You can find this in the browser address bar when you are logged in
+        * You can find this in the browser address bar when you are logged in
 5. Add the Custom Tab "OrgLimits" to your Tab Layout, or go to `/apex/OrgLimits` to view your daily limits
 
 ## Open Issues to Remember
