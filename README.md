@@ -11,10 +11,10 @@ The Visualforce page uses an open source JavaScript library called [JustGage](ht
 2. Deploy the code to your Salesforce org using the MdAPI through Workbench, Force.com IDE, or Ant Migration Tool
 3. Assign the included OrgLimits permission set to your user
 4. Create a Remote Site Setting to allow the Apex Class to call teh Salesforce REST API
-    * Navigate to Setup > Security Controls > Remote Site Settings
-    * Find the Remote Site Setting names "OrgLimits" and click Edit
-    * Change the Remote Site URL field from `https://instance.salesforce.com` to your instance
-    * * You can find this in the browser address bar when you are logged in
+    1. Navigate to Setup > Security Controls > Remote Site Settings
+    2. Find the Remote Site Setting names "OrgLimits" and click Edit
+    3. Change the Remote Site URL field from `https://instance.salesforce.com` to your instance
+    4. You can find this in the browser address bar when you are logged in
 5. Add the Custom Tab "OrgLimits" to your Tab Layout, or go to `/apex/OrgLimits` to view your daily limits
 
 ## Open Issues to Remember
