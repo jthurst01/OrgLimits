@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Org Limits</fullName>
+    <description>Unmanaged package for visualforce page that shows a dashboard-like layout of the current usage of all things limited within salesforce. Github repo available at https://github.com/jthurst01/OrgLimits. Remember: 
+- Only works it you assign permission set to the users you want
+- you must enable your orgs api url. Search in quick find in the setup menu for &apos;remote site settings&apos; and add your url. (ex. https://c.instance.visual.force.com) 
+- Visit the Tab &apos;Org Limits&apos; once package is installed, permission set to your user, and your salesforce api url is enabled. 
+
+Built by Jay Hurst. Packaged by Jack Ziesing.</description>
     <types>
         <members>RESTLimitResource</members>
+        <members>RESTLimitResourceMock</members>
+        <members>TestRESTLimitResource</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -25,5 +34,5 @@
         <members>raphael</members>
         <name>StaticResource</name>
     </types>
-    <version>35.0</version>
+    <version>33.0</version>
 </Package>
