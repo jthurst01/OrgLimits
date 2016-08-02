@@ -25,5 +25,5 @@
         <members>raphael</members>
         <name>StaticResource</name>
     </types>
-    <version>35.0</version>
+    <version>37.0</version>
 </Package>
