@@ -19,4 +19,4 @@ The Visualforce page uses an open source JavaScript library called [JustGage](ht
 ## Open Issues to Remember
 1. There are no tests included in the package
 2. If there is an error form the API call, the Visualforce Page will not have any data in the gauges
-3. The running user must have access to teh Salesforce API
+3. The running user must have access to the Salesforce API
