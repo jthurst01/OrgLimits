@@ -35,6 +35,7 @@
         <div id="gg20" class="gauge"></div>
         <div id="gg21" class="gauge"></div>
         <div id="gg22" class="gauge"></div>
+        <div id="gg23" class="gauge"></div>
         <div style="display: none;"><input type="text" id="inJSON" value="{!JSONtext}"/></div> 
     </div>
     <script src="{!$Resource.raphael}"></script>
@@ -79,12 +80,12 @@
                     defaults: dflt
                 });
             }
-            if(obj.hasOwnProperty('DailyStreamingV2ApiEvents')) {
+            if(obj.hasOwnProperty('DailyDurableStreamingApiEvents')) {
                 document.getElementById("gg4").style.display="inline-block";
                 var gg4 = new JustGage({
                     id: 'gg4',
-                    value: obj.DailyStreamingV2ApiEvents.Max - obj.DailyStreamingV2ApiEvents.Remaining,
-                    max: obj.DailyStreamingV2ApiEvents.Max,
+                    value: obj.DailyDurableStreamingApiEvents.Max - obj.DailyDurableStreamingApiEvents.Remaining,
+                    max: obj.DailyDurableStreamingApiEvents.Max,
                     title: 'Daily Durable PushTopic Streaming Events',
                     defaults: dflt
                 });
@@ -99,12 +100,12 @@
                     defaults: dflt
                 });
             }
-            if(obj.hasOwnProperty('DailyGenericStreamingV2ApiEvents')) {
+            if(obj.hasOwnProperty('DailyDurableGenericStreamingApiEvents')) {
                 document.getElementById("gg6").style.display="inline-block";
                 var gg6 = new JustGage({
                     id: 'gg6',
-                    value: obj.DailyGenericStreamingV2ApiEvents.Max - obj.DailyGenericStreamingV2ApiEvents.Remaining,
-                    max: obj.DailyGenericStreamingV2ApiEvents.Max,
+                    value: obj.DailyDurableGenericStreamingApiEvents.Max - obj.DailyDurableGenericStreamingApiEvents.Remaining,
+                    max: obj.DailyDurableGenericStreamingApiEvents.Max,
                     title: 'Daily Durable Generic Streaming Events',
                     defaults: dflt
                 });
@@ -119,20 +120,30 @@
                     defaults: dflt
                 });
             }
-            if(obj.hasOwnProperty('StreamingV2ApiConcurrentClients')) {
+            if(obj.hasOwnProperty('DurableStreamingApiConcurrentClients')) {
                 document.getElementById("gg8").style.display="inline-block";
                 var gg8 = new JustGage({
                     id: 'gg8',
-                    value: obj.StreamingV2ApiConcurrentClients.Max - obj.StreamingV2ApiConcurrentClients.Remaining,
-                    max: obj.StreamingV2ApiConcurrentClients.Max,
+                    value: obj.DurableStreamingApiConcurrentClients.Max - obj.DurableStreamingApiConcurrentClients.Remaining,
+                    max: obj.DurableStreamingApiConcurrentClients.Max,
                     title: 'Concurrent Durable Streaming Clients',
                     defaults: dflt
                 });
             }
-            if(obj.hasOwnProperty('DataStorageMB')) {
+            if(obj.hasOwnProperty('HourlyODataCallout')) {
                 document.getElementById("gg9").style.display="inline-block";
                 var gg9 = new JustGage({
                     id: 'gg9',
+                    value: obj.HourlyODataCallout.Max - obj.HourlyODataCallout.Remaining,
+                    max: obj.HourlyODataCallout.Max,
+                    title: 'Hourly OData Callout',
+                    defaults: dflt
+                });
+            }
+            if(obj.hasOwnProperty('DataStorageMB')) {
+                document.getElementById("gg10").style.display="inline-block";
+                var gg10 = new JustGage({
+                    id: 'gg10',
                     value: obj.DataStorageMB.Max - obj.DataStorageMB.Remaining,
                     max: obj.DataStorageMB.Max,
                     title: 'Data Storage (MB)',
@@ -140,9 +151,9 @@
                 });
             }
             if(obj.hasOwnProperty('FileStorageMB')) {
-                document.getElementById("gg10").style.display="inline-block";
-                var gg10 = new JustGage({
-                    id: 'gg10',
+                document.getElementById("gg11").style.display="inline-block";
+                var gg11 = new JustGage({
+                    id: 'gg11',
                     value: obj.FileStorageMB.Max - obj.FileStorageMB.Remaining,
                     max: obj.FileStorageMB.Max,
                     title: 'File Storage (MB)',
@@ -150,9 +161,9 @@
                 });
             }
             if(obj.hasOwnProperty('DailyAsyncApexExecutions')) {
-                document.getElementById("gg11").style.display="inline-block";
-                var gg11 = new JustGage({
-                    id: 'gg11',
+                document.getElementById("gg12").style.display="inline-block";
+                var gg12 = new JustGage({
+                    id: 'gg12',
                     value: obj.DailyAsyncApexExecutions.Max - obj.DailyAsyncApexExecutions.Remaining,
                     max: obj.DailyAsyncApexExecutions.Max,
                     title: 'Daily Async Apex Execs',
@@ -160,9 +171,9 @@
                 });
             }
             if(obj.hasOwnProperty('MassEmail')) {
-                document.getElementById("gg12").style.display="inline-block";
-                var gg12 = new JustGage({
-                    id: 'gg12',
+                document.getElementById("gg13").style.display="inline-block";
+                var gg13 = new JustGage({
+                    id: 'gg13',
                     value: obj.MassEmail.Max - obj.MassEmail.Remaining,
                     max: obj.MassEmail.Max,
                     title: 'Daily Mass Emails',
@@ -170,9 +181,9 @@
                 });
             }
             if(obj.hasOwnProperty('SingleEmail')) {
-                document.getElementById("gg13").style.display="inline-block";
-                var gg13 = new JustGage({
-                    id: 'gg13',
+                document.getElementById("gg14").style.display="inline-block";
+                var gg14 = new JustGage({
+                    id: 'gg14',
                     value: obj.SingleEmail.Max - obj.SingleEmail.Remaining,
                     max: obj.SingleEmail.Max,
                     title: 'Daily Single Emails',
@@ -180,9 +191,9 @@
                 });
             }
             if(obj.hasOwnProperty('DailyWorkflowEmails')) {
-                document.getElementById("gg14").style.display="inline-block";
-                var gg14 = new JustGage({
-                    id: 'gg14',
+                document.getElementById("gg15").style.display="inline-block";
+                var gg15 = new JustGage({
+                    id: 'gg15',
                     value: obj.DailyWorkflowEmails.Max - obj.DailyWorkflowEmails.Remaining,
                     max: obj.DailyWorkflowEmails.Max,
                     title: 'Daily Workflow Emails',
@@ -190,9 +201,9 @@
                 });
             }
             if(obj.hasOwnProperty('HourlyTimeBasedWorkflow')) {
-                document.getElementById("gg15").style.display="inline-block";
-                var gg15 = new JustGage({
-                    id: 'gg15',
+                document.getElementById("gg16").style.display="inline-block";
+                var gg16 = new JustGage({
+                    id: 'gg16',
                     value: obj.HourlyTimeBasedWorkflow.Max - obj.HourlyTimeBasedWorkflow.Remaining,
                     max: obj.HourlyTimeBasedWorkflow.Max,
                     title: 'Hourly Time Based Workflow',
@@ -200,9 +211,9 @@
                 });
             }
             if(obj.hasOwnProperty('HourlySyncReportRuns')) {
-                document.getElementById("gg16").style.display="inline-block";
-                var gg16 = new JustGage({
-                    id: 'gg16',
+                document.getElementById("gg17").style.display="inline-block";
+                var gg17 = new JustGage({
+                    id: 'gg17',
                     value: obj.HourlySyncReportRuns.Max - obj.HourlySyncReportRuns.Remaining,
                     max: obj.HourlySyncReportRuns.Max,
                     title: 'Hourly Sync Reports',
@@ -210,9 +221,9 @@
                 });
             }
             if(obj.hasOwnProperty('ConcurrentSyncReportRuns')) {
-                document.getElementById("gg17").style.display="inline-block";
-                var gg17 = new JustGage({
-                    id: 'gg17',
+                document.getElementById("gg18").style.display="inline-block";
+                var gg18 = new JustGage({
+                    id: 'gg18',
                     value: obj.ConcurrentSyncReportRuns.Max - obj.ConcurrentSyncReportRuns.Remaining,
                     max: obj.ConcurrentSyncReportRuns.Max,
                     title: 'Concurrent Sync Reports',
@@ -221,9 +232,9 @@
                 });
             }
             if(obj.hasOwnProperty('HourlyAsyncReportRuns')) {
-                document.getElementById("gg18").style.display="inline-block";
-                var gg18 = new JustGage({
-                    id: 'gg18',
+                document.getElementById("gg19").style.display="inline-block";
+                var gg19 = new JustGage({
+                    id: 'gg19',
                     value: obj.HourlyAsyncReportRuns.Max - obj.HourlyAsyncReportRuns.Remaining,
                     max: obj.HourlyAsyncReportRuns.Max,
                     title: 'Hourly Async Reports',
@@ -231,9 +242,9 @@
                 });
             }
             if(obj.hasOwnProperty('ConcurrentAsyncGetReportInstances')) {
-                document.getElementById("gg19").style.display="inline-block";
-                var gg19 = new JustGage({
-                    id: 'gg19',
+                document.getElementById("gg20").style.display="inline-block";
+                var gg20 = new JustGage({
+                    id: 'gg20',
                     value: obj.ConcurrentAsyncGetReportInstances.Max - obj.ConcurrentAsyncGetReportInstances.Remaining,
                     max: obj.ConcurrentAsyncGetReportInstances.Max,
                     title: 'Concurrent Async Reports',
@@ -241,9 +252,9 @@
                 });
             }
             if(obj.hasOwnProperty('HourlyDashboardRefreshes')) {
-                document.getElementById("gg20").style.display="inline-block";
-                var gg20 = new JustGage({
-                    id: 'gg20',
+                document.getElementById("gg21").style.display="inline-block";
+                var gg21 = new JustGage({
+                    id: 'gg21',
                     value: obj.HourlyDashboardRefreshes.Max - obj.HourlyDashboardRefreshes.Remaining,
                     max: obj.HourlyDashboardRefreshes.Max,
                     title: 'Hourly Dashboard Refreshes',
@@ -251,9 +262,9 @@
                 });
             }
             if(obj.hasOwnProperty('HourlyDashboardResults')) {
-                document.getElementById("gg21").style.display="inline-block";
-                var gg21 = new JustGage({
-                    id: 'gg21',
+                document.getElementById("gg22").style.display="inline-block";
+                var gg22 = new JustGage({
+                    id: 'gg22',
                     value: obj.HourlyDashboardResults.Max - obj.HourlyDashboardResults.Remaining,
                     max: obj.HourlyDashboardResults.Max,
                     title: 'Hourly Dashboard Results',
@@ -261,9 +272,9 @@
                 });
             }
             if(obj.hasOwnProperty('HourlyDashboardStatuses')) {
-                document.getElementById("gg22").style.display="inline-block";
-                var gg22 = new JustGage({
-                    id: 'gg22',
+                document.getElementById("gg23").style.display="inline-block";
+                var gg23 = new JustGage({
+                    id: 'gg23',
                     value: obj.HourlyDashboardStatuses.Max - obj.HourlyDashboardStatuses.Remaining,
                     max: obj.HourlyDashboardStatuses.Max,
                     title: 'Hourly Dashboard Statuses',
