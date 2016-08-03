@@ -28,4 +28,3 @@ To install as unmanaged package click [here](https://login.salesforce.com/packag
 1. There are provided tests in the package, but you may want to beef up the tests for your environment
 2. If there is an error form the API call, the Visualforce Page will not have any data in the gauges
 3. The running user must have access to the Salesforce API
->>>>>>> jthurst01/master
