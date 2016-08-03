@@ -25,7 +25,7 @@ The Visualforce page uses an open source JavaScript library called [JustGage](ht
 
 To install as unmanaged package click [here](https://login.salesforce.com/packaging/installPackage.apexp?p0=04t36000000wJHO)
 =======
-1. There are no tests included in the package
+1. There are provided tests in the package, but you may want to beef up the tests for your environment
 2. If there is an error form the API call, the Visualforce Page will not have any data in the gauges
 3. The running user must have access to the Salesforce API
 >>>>>>> jthurst01/master
